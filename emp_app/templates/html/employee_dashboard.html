@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Dashboard</title>
+  <style>
+    /* CSS for Employee Dashboard */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 strong {
+  color: #0066cc;
+}
+
+form {
+  background: #fff;
+  padding: 0px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+form p {
+  margin: 0 0 10px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px 20px;
+  background: #0066cc;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  margin:4px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #004a99;
+}
+
+p {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+button{
+  width: 100%;
+  padding: 10px 20px;
+  background: #0066cc;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  margin:4px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  form, p {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to <br> <strong>Employee Dashboard</strong></h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Apply Leave</button>
+
+    </form>
+    {% for leave_application in leave_applications %}
+    <div class="leave-application">
+      <p>{{ leave_application.reason }} - {{ leave_application.status }}</p>
+    </div>
+    {% endfor %}
+    <button type="/">Go to Home</button>
+
+  </div>
+</body>
+</html>

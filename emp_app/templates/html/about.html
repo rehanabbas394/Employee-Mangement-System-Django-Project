@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .slider-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      text-align: center; /* Center align content */
+    }
+    .slides {
+      display: flex;
+      justify-content: center; /* Center align slides */
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      width: 300px; /* Set width of each card */
+      margin: 0 10px; /* Add margin between cards */
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      z-index: 1000;
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<h1 style="text-align: center; color:rgb(32, 34, 30)">Employee Management System</h1>
+<div class="slider-container">
+  <div class="slides">
+    <div class="slide">
+      <img src="https://media.licdn.com/dms/image/D4E03AQFydpHLE1t5cQ/profile-displayphoto-shrink_200_200/0/1707826063345?e=2147483647&v=beta&t=a_0nLZEgiXJkUDp1U67xiuAf1xO-t9-g6Y-zIPVsvaU"  alt="no img"/>
+      <h1>Rehan abbas</h1>
+      <p>He is a web developer and software engineer</p>
+    </div>
+    <div class="slide">
+      <img src="https://media.licdn.com/dms/image/D4E03AQFydpHLE1t5cQ/profile-displayphoto-shrink_200_200/0/1707826063345?e=2147483647&v=beta&t=a_0nLZEgiXJkUDp1U67xiuAf1xO-t9-g6Y-zIPVsvaU" alt="Slide" />
+      <h1>Rehan Abbas</h1>
+      <p>He is a designer and frontend developer</p>
+    </div>
+    <div class="slide">
+      <img src="https://media.licdn.com/dms/image/D4E03AQFydpHLE1t5cQ/profile-displayphoto-shrink_200_200/0/1707826063345?e=2147483647&v=beta&t=a_0nLZEgiXJkUDp1U67xiuAf1xO-t9-g6Y-zIPVsvaU" alt="Slide 3" />
+      <h1>Rehan Abbas</h1>
+      <p>She is a project manager</p>
+    </div>
+  </div>
+  <div class="prev" onclick="moveSlide(-1)">❮</div>
+  <div class="next" onclick="moveSlide(1)">❯</div>
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function moveSlide(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</body>
+</html>

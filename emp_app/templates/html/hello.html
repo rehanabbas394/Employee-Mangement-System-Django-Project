@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            {% comment %} display: flex;
+            justify-content: center;
+            align-items: center; {% endcomment %}
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h1 strong {
+            color: #007bff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        h2.blue {
+            color: blue;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Welcome to <br /><strong>Employee Management System</strong>
+    </h1>
+
+    {% if user.is_authenticated %}
+    <h2 class="blue">Hello! {{fname}}</h2>
+    <h2>You are successfully logged in</h2>
+    {% endif %}
+    <hr>
+    <button type="submit"><a href="/">Go to Home</a></button>
+    <button type="submit"><a href="login">Logout</a></button>
+</body>
+</html>

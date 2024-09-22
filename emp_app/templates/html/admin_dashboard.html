@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      
+      .leave-application {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      p{
+        text-align: center;
+
+      }
+      button{
+        margin: 5px auto;
+            }
+      .leave-application p {
+        text-align: center;
+      }
+      
+       form {
+      
+          margin-top: 20px;
+          text-align: center;
+        }
+      
+      
+      .leave-application button {
+        padding: 12px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .leave-application button.accept {
+        background-color: #28a745;
+        text-align: center;
+        color: #fff;
+      }
+      
+      .leave-application button.reject {
+        background-color: #dc3545;
+        color: #fff;
+      }
+      
+      @media only screen and (max-width: 600px) {
+        .container {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to <br>Admin Dashboard</h1>
+    {% for leave_application in leave_applications %}
+        <p>{{ leave_application.employee.username }}: {{ leave_application.reason }} - {{ leave_application.status }}
+            <form method="post" action="{% url 'leave_action' leave_id=leave_application.id %}">
+                {% csrf_token %}
+                <button type="submit" name="action" value="accept">Accept</button>
+                <button type="submit" name="action" value="reject">Reject</button>
+            </form>
+        </p>
+    {% endfor %}
+  </body>
+</html>

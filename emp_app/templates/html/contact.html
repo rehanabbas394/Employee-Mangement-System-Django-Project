@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        .contact-us {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .contact-us h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-us input,
+        .contact-us textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        
+        .contact-us button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .contact-us button:hover {
+            background-color: #0056b3;
+        }
+        
+        .contact-us #status {
+            text-align: center;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;">Employee Management System</h1>
+    
+
+<div class="contact-us">
+        <h2>Contact Us</h2>
+        <form id="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" placeholder="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="status"></p>
+    </div>
+
+</body>
+</html>

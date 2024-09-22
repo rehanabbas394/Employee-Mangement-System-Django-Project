@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy and Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .privacy-policy, .contact-us {
+            margin-bottom: 40px;
+        }
+
+        .privacy-policy p, .contact-us p {
+            margin: 10px 0;
+        }
+
+        .contact-us form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-us input, .contact-us textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-us input:focus, .contact-us textarea:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        .contact-us button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-us button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .contact-us input, .contact-us textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .contact-us button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our website, [website URL], and other sites we own and operate.</p>
+        <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+        <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.</p>
+        <p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
+        <p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
+        <p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
+        <p>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+    </div>
+
+    <div class="contact-us">
+        <h2>Contact Us</h2>
+        <form id="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="status"></p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a> | 
+        <a href="#">Contact Us</a>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Action</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 1.2em;
+            color: #555;
+            text-align: center;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+        
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        button a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        button a:hover {
+            color: #e0e0e0;
+        }
+        
+    </style>
+</head>
+<body>
+<h1>Leave Action</h1>
+<p>{{ leave_application.employee.username }}: {{ leave_application.reason }} - {{ leave_application.status }}</p>
+<hr>
+<button><a href="/">Home</a></button>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Style for the main heading */
+      h1 {
+        color: #4a90e2;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Styles for the table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+      }
+
+      thead {
+        background-color: #4a90e2;
+        color: #fff;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Styles for the buttons */
+      button {
+        background-color: #4a90e2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px 5px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      button a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      button:hover {
+        background-color: #357ab8;
+      }
+
+      button:active {
+        background-color: #2b5c8a;
+      }
+
+      /* Style for the subheading */
+      h2 {
+        color: #4a90e2;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 600px) {
+        table,
+        th,
+        td {
+          display: block;
+          width: 100%;
+        }
+
+        th,
+        td {
+          box-sizing: border-box;
+          width: 100%;
+        }
+
+        button {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Employee Detail</h1>
+    <table border>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Department</td>
+          <td>Role</td>
+          <td>Contact</td>
+          <td>Address</td>
+          <td>Salary</td>
+          <td>User</td>
+        </tr>
+      </thead>
+      {% for form in form %}
+      <tbody>
+        <tr>
+          <td>{{form.name}}</td>
+          <td>{{form.email}}</td>
+          <td>{{form.contact}}</td>
+          <td>{{form.dep}}</td>
+          <td>{{form.role}}</td>
+          <td>{{form.address}}</td>
+          <td>{{form.salary}}</td>
+          <td>{{form.user}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    <h2>Leave Portal</h2>
+    <h3>Would you like to submit leave application?</h3>
+    <button type="submit">
+      <a href="employee_dashboard">Leave Application</a>
+    </button>
+    <button type="submit"><a href="/">Go to Home</a></button>
+  </body>
+</html>
