@@ -12,6 +12,7 @@ class LeaveApplication(models.Model):
     status = models.CharField(max_length=10, choices=status_choices, default='pending')
     date_created = models.DateTimeField(auto_now_add=True)
 
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_employee = models.BooleanField(default=False)
