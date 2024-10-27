@@ -67,13 +67,8 @@ def login_user(request):
 
     return render(request, "html/login.html")
 
-
-
-
 def hello(request):
     return render(request, "html/hello.html")
-
-
 
 
 def logout(request):
@@ -103,10 +98,6 @@ def contact(request):
     return render(request, "html/contact.html")
 
 
-from django.shortcuts import render, redirect
-from django.urls import reverse
-from .forms import UserForm
-
 def user_register(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -122,9 +113,6 @@ def user_register(request):
     
     context = {'form': form}
     return render(request, 'html/user.html', context)
-
-
-
 
 
 def employee_panel(request):
@@ -148,11 +136,6 @@ def admin_panel(request):
     else:
         form = adminform()
     return render(request, "html/admin_panal.html", {'form': form})
-
-
-
-
-
 
 
 @login_required
